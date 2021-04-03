@@ -1,0 +1,9 @@
+<launch>
+
+    <include file="$(find ros_basics_project)/launch/start_find_wall_service_server.launch" />
+
+    <include file="$(find ros_basics_project)/launch/start_record_odom_action_server.launch" />
+
+    <node pkg="ros_basics_project" type="move_robot_hug_wall.py" name="read_lasers" output="screen" />
+
+</launch>

@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="ros_basics_project" type="find_wall.py" name="find_wall_node" output="screen" />
+
+</launch>
