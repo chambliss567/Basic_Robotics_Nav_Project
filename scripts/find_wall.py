@@ -35,7 +35,7 @@ class FindWallClass(object):
         time.sleep(1)
         rospy.loginfo("Subscriber and publisher are connected to their topics")
         #Only enter if robot has not turned to face wall
-        if self.check_laser_init_pos == False:
+        if not self.check_laser_init_pos:
             # Grab laser ray correspoding to closest distance to wall
             self.check_laser_init_pos = True
             # Determine how long robot should turn and whether it should turn right/left
@@ -76,7 +76,7 @@ class FindWallClass(object):
 
     def readLaser(self, laserscan):
         # Find shortest laser ray if robot has not turned to face wall yet
-        if self.check_laser_init_pos == False:
+        if not self.check_laser_init_pos:
             # Look at sets of 90 rays at a time so obstacles are not mistaken for walls
             ray_chunks = [laserscan.ranges[x:x+90] for x in range(0,len(laserscan.ranges),90)]
             std_dev_chunks = np.array([np.std(ray) for ray in ray_chunks])

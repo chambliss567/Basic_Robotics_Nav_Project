@@ -58,9 +58,9 @@ print(result)
 # Call the odometry recording action server
 client = actionlib.SimpleActionClient('/record_odom', OdomRecordAction)
 client.wait_for_server()
-goal = OdomRecordGoal()
-goal.goal = Empty()
-client.send_goal(goal, feedback_cb=feedback_callback)
+action_goal = OdomRecordGoal()
+action_goal.goal = Empty()
+client.send_goal(action_goal, feedback_cb=feedback_callback)
 # Wait until action server has started
 time.sleep(3)
 # Start subscriber node
