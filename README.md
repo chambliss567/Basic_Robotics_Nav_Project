@@ -37,7 +37,7 @@ An action server **/record_odom** was created to stop the robot after one lap. T
 
 ### Move the robot
 
-To move the robot, a simple script is used that does the following:
+To move the robot, a simple node **read_lasers** was created that does the following:
 1. Calls the **/find_wall** service
 2. Calls the **/record_odom** action server
 3. Subscribes to the **/scan** topic to get LaserScan data
@@ -49,7 +49,7 @@ To move the robot, a simple script is used that does the following:
 
 Before starting this package, verify that the package is built and source with catkin
 
-To start this package, run the **main.launch** file with the following command:</br>
+To start the **read_lasers** node, run the **main.launch** file with the following command:</br>
 **roslaunch *name_of_package* main.launch**
 
 ## Release Notes
