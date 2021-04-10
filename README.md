@@ -4,12 +4,12 @@ This project was completed on the Construct platform, an online learning platfor
 
 This project sets out to fulfill the requirements defined in the "ROS Basics Real Robot" ROS project. The project specificactions and requirements are as follows
 
-# Specifications: 
+### Specifications: 
 1. A turtlebot3 will be used
 2. This turtlebot is placed within an enclosed track by 4 walls
 3. This track contains multiple obstacles
 
-# Requirements
+### Requirements
 1. The robot must be able to identify the closest wall to it, move to the wall, and turn to have its right side next to the wall
 2. The robot must navigate the track by "hugging" the wall to its right
 3. After one lap, the robot will stop
@@ -18,7 +18,7 @@ This project sets out to fulfill the requirements defined in the "ROS Basics Rea
 
 ## ROS Project Details
 
-# Find Wall
+### Find Wall
 
 To find the nearest wall and move towards it, a service **/find_wall** was created that does the following:
 1. Reads laser data from the **/scan** topic to find the closest objects to the turtletbot
@@ -28,14 +28,14 @@ To find the nearest wall and move towards it, a service **/find_wall** was creat
 
 This service responds with a boolean
 
-# Stop robot after one lap
+### Stop robot after one lap
 
 An action server **/record_odom** was created to stop the robot after one lap. This action server does the following:
 1. Subscribes to the **/odom** topic to both grab the initial position of the turlebot as well as grab the position of the robot every second
 2. Every second calculates the distance the robot has traveled and publishes that value as feedback
 3. Once the robot is within 0.15 meters of its start points, completes the action and returns the total number of odometry points recorded throughout the robots lap
 
-# Move the robot
+### Move the robot
 
 To move the robot, a simple script is used that does the following:
 1. Calls the **/find_wall** service
