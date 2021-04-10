@@ -45,6 +45,13 @@ To move the robot, a simple script is used that does the following:
 5. Makes sure that the robot stays within 0.2-0.3 meters of the wall to its right
 6. Turns to the left to avoid obstacles and the wall in front of it
 
+## Launching Node
+
+Before starting this package, verify that the package is built and source with catkin
+
+To start this package, run the **main.launch** file with the following command:</br>
+**roslaunch *name_of_package* main.launch**
+
 ## Release Notes
 
 ### 1.0
