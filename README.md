@@ -51,9 +51,3 @@ Before starting this package, verify that the package is built and source with c
 
 To start the **read_lasers** node, run the **main.launch** file with the following command:</br>
 **roslaunch *name_of_package* main.launch**
-
-## Release Notes
-
-### 1.0
-
-Initial release.
